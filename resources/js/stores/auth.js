@@ -23,9 +23,9 @@ const actions = {
                 }
                 resolve(Response.data);
             }).catch( (err) => {
-                if(err.response.state == 422){
+                // if(err.response.state == 422){
                     commit('SET_ERRORS', err.response.data.errors, {root: true});
-                }
+                // }
             });
         });
     }

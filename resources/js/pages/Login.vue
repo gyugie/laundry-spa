@@ -66,6 +66,7 @@ export default{
         //proses login
         postLogin(){
             this.submit(this.data).then(() => {
+                
                 if(this.isAuth){
                     this.CLEAR_ERRORS();
                     this.$router.push({name: 'home'});
