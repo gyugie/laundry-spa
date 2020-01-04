@@ -1,4 +1,4 @@
-<template>
+<template >
     <div class="col-md-12">
         <div class="panel">
             <div class="panel-heading">
@@ -112,7 +112,21 @@ export default {
                     this.removeOutlet(id)
                 }
             })
-        }
+        },
+        beforeLeave(element) {
+                this.prevHeight = getComputedStyle(element).height;
+            },
+            enter(element) {
+                const { height } = getComputedStyle(element);
+                element.style.height = this.prevHeight;
+
+                setTimeout(() => {
+                    element.style.height = height;
+                });
+            },
+            afterEnter(element) {
+                element.style.height = 'auto';
+            },
     }
 }
 </script>

@@ -20,6 +20,20 @@
     <link rel="stylesheet" href="{{ asset('assets/css/skins/_all-skins.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+</style>
 <body class="hold-transition skin-blue layout-top-nav">
     <div id="dw">
         <app></app>
@@ -39,3 +53,4 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+

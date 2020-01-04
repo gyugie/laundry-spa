@@ -3,7 +3,9 @@
         <app-header v-if="isAuth" />
 
         <div class="content-wrapper">
-            <router-view></router-view>
+            <transition name="fade">
+                <router-view></router-view>
+            </transition>
         </div>
         <app-footer v-if="isAuth" />
     </div>

@@ -9,7 +9,9 @@
 
         <section class="content">
             <div class="row">
-                <router-view></router-view>
+                <transition name="fade">
+                    <router-view></router-view>
+                </transition>
             </div>
         </section>
     </div>

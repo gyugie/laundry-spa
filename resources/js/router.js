@@ -9,8 +9,6 @@ import AddOutlet from './pages/outlets/Add.vue'
 import EditOutlet from './pages/outlets/Edit.vue'
 
 
-
-
 Vue.use(Router)
 
 const router = new Router({

@@ -1857,6 +1857,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -2275,6 +2277,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           name: 'outlets.data'
         });
       });
+    },
+    beforeLeave: function beforeLeave(element) {
+      this.prevHeight = getComputedStyle(element).height;
+    },
+    enter: function enter(element) {
+      var _getComputedStyle = getComputedStyle(element),
+          height = _getComputedStyle.height;
+
+      element.style.height = this.prevHeight;
+      setTimeout(function () {
+        element.style.height = height;
+      });
+    },
+    afterEnter: function afterEnter(element) {
+      element.style.height = 'auto';
     }
   }),
   components: {
@@ -2418,6 +2435,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Breadcrumb_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Breadcrumb.vue */ "./resources/js/components/Breadcrumb.vue");
+//
+//
 //
 //
 //
@@ -2584,6 +2603,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this.removeOutlet(id);
         }
       });
+    },
+    beforeLeave: function beforeLeave(element) {
+      this.prevHeight = getComputedStyle(element).height;
+    },
+    enter: function enter(element) {
+      var _getComputedStyle = getComputedStyle(element),
+          height = _getComputedStyle.height;
+
+      element.style.height = this.prevHeight;
+      setTimeout(function () {
+        element.style.height = height;
+      });
+    },
+    afterEnter: function afterEnter(element) {
+      element.style.height = 'auto';
     }
   })
 });
@@ -38692,7 +38726,12 @@ var render = function() {
     [
       _vm.isAuth ? _c("app-header") : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "content-wrapper" }, [_c("router-view")], 1),
+      _c(
+        "div",
+        { staticClass: "content-wrapper" },
+        [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
+        1
+      ),
       _vm._v(" "),
       _vm.isAuth ? _c("app-footer") : _vm._e()
     ],
@@ -39852,7 +39891,12 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("section", { staticClass: "content" }, [
-      _c("div", { staticClass: "row" }, [_c("router-view")], 1)
+      _c(
+        "div",
+        { staticClass: "row" },
+        [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
+        1
+      )
     ])
   ])
 }
