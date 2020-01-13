@@ -77,10 +77,10 @@ const actions = {
             .catch((error) => {
                 //APABILA TERJADI ERROR VALIDASI
                 //DIMANA LARAVEL MENGGUNAKAN CODE 422
-                if (error.response.status == 422) {
+                // if (error.response.status == 422) {
                     //MAKA LIST ERROR AKAN DIASSIGN KE STATE ERRORS
                     commit('SET_ERRORS', error.response.data.errors, { root: true })
-                }
+                // }
             })
         })
     },

@@ -24,6 +24,7 @@
         name: 'EditOutlet',
         created(){
             this.editOutlet(this.$route.params.id)
+            
         },
         methods:{
             ...mapActions('outlet',['editOutlet','updateOutlet']),

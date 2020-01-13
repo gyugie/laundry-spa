@@ -3,13 +3,16 @@ import Vuex from 'vuex'
 
 import auth from './stores/auth.js'
 import outlet from './stores/outlet.js'
+import courier from './stores/courier.js'
+
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
     modules: {
         auth,
-        outlet
+        outlet,
+        courier
     },
     state: {
         token: localStorage.getItem('token'),
@@ -26,6 +29,9 @@ const store = new Vuex.Store({
         },
         SET_ERRORS(state, payload) {
             state.errors = payload
+        },
+        SET_ALERT(state, payload){
+            state.alert = payload;
         },
         CLEAR_ERRORS(state) {
             state.errors = []

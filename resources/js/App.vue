@@ -14,6 +14,7 @@
     import { mapState, mapGetters } from 'vuex'
     import Header from './components/Header.vue'
     import Footer from './components/Footer.vue'
+    
     export default {
         computed: {
             ...mapState(['token']),
